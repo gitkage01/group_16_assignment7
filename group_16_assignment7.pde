@@ -5,9 +5,12 @@
 // 2: Game Over Screen
 // 3: How to play
 
+int counter = 0;
+
 int gameScreen = 0;
 NewGame newGame;
 Pause pause;
+
 
 Enemy en1;
 Enemy en2;
@@ -121,7 +124,9 @@ void gameScreen() {
   en6.fall();
   
   tank.display();
-  
+  if (tank.mark){
+    tank.fire();
+  }
 }
 
 // Game over screen
@@ -134,6 +139,8 @@ void gameOverScreen() {
   textSize(16);
   fill(0);
   text("Click to restart", width/2, height/2 + 30);
+  text("Score",width/2,height/2+60);
+  text(counter, width/2, height/2+90);
 }
 
 //// Instructions screen
@@ -149,6 +156,17 @@ void gameOverScreen() {
 //}
 
 void keyPressed() {
+  if (key ==' '){
+    tank.endpoint=0;
+    tank.check(en1);
+    tank.check(en2);
+    tank.check(en3);
+    tank.check(en4);
+    tank.check(en5);
+    tank.check(en6);
+    tank.mark=true;
+  }
+    
   if (key == CODED) {
     if (keyCode == LEFT) {
       tank.moveLeft();
@@ -156,5 +174,11 @@ void keyPressed() {
     if (keyCode == RIGHT) {
       tank.moveRight();
     }
+  }
+}
+
+void keyReleased(){
+  if (key==' '){
+    tank.mark= false;
   }
 }
