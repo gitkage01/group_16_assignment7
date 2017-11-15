@@ -1,0 +1,17 @@
+Rules of play:
+1. Enemies fall at a given rate from top of screen
+2. Player can move horizontally at the bottam of the screen
+3. Player can shoot enemies, making them disappear
+4. Enemies will keep spawning until the game is over
+
+Win/Lose conditions:
+1. Win: no win condition. Just try to get the highest score
+2. Lose: lose if any of the enemies reach the bottam of the screen
+
+Classes:
+There are three classes. The "Player" class is dedicated for the controllable player.
+The "Enemy" class is dedicated for the enemies that fall from the top of the screen.
+The "Button" class is dedicated for the interactables in the menus.
+
+Het worked on the player and enemy classes. Lauren worked on the menus. Jiajun worked
+on the the score and gameplay aspects of the game.
